@@ -249,7 +249,11 @@ body.nav-active { overflow: hidden; }
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
-
+.logo-text
+{
+  font-size: larger;
+  font-weight: 600;
+}
 .header {
   position: absolute;
   top: 0;
