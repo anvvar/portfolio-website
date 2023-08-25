@@ -387,15 +387,15 @@
 
                 <div class="card-content" data-reveal="right">
 
-                  <p class=" card-tag" style="color: #3f78e0">Mobile Design</p>
+                  <p class=" card-tag" style="color: #3f78e0">Web Design</p>
 
-                  <h3 class="h3 card-title">Budget App</h3>
+                  <h3 class="h3 card-title">Linkedin-Clone</h3>
 
                   <p class="card-text">
                     This project is a LinkedIn clone created using modern web development technologies. The goal of this project is to showcase my frontend skills by replicating the key features and layout of the LinkedIn platform.
                   </p>
 
-                  <a href="https://anvvar.github.io/Linkedin-homepage/" class="btn-text" style="color: #3f78e0">
+                  <a href="https://anvvar.github.io/Linkedin-homepage/" class="btn-text" style="color: #3f78e0" target="_blank">
                     <span class="span">See Project</span>
 
                     <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -410,10 +410,6 @@
 
               </div>
             </li>
-
-          
-
-
           </ul>
 
         </div>
@@ -447,12 +443,12 @@
 
             </div>
 
-            <form action="" class="contact-form" data-reveal="right">
+            <form action="" class="contact-form" data-reveal="right" name="submit-to-google-sheet">
 
               <div class="input-wrapper">
                 <input type="text" name="name" placeholder="Name *" required class="input-field">
 
-                <input type="email" name="email_address" placeholder="Email *" required class="input-field">
+                <input type="email" name="email" placeholder="Email *" required class="input-field">
               </div>
 
               <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
@@ -529,6 +525,17 @@
   <!-- 
     - ionicon link
   -->
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyG4v41G1JUFlddukCfrRfqDY02lNDAhutCZ2aOoijkCoUU5RlbXQJLUQOiiUHif3r3hg/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response), alert("form submitted succefully"))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
